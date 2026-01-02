@@ -1,32 +1,86 @@
-# Instructions
-*This is a template to help you make good pull requests. You may use [Github Markdown](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/) syntax to format your issue report.*
-*Please:*
-- *only keep the "FIX", "CLOSE", "NEW", "UIUX", PERF" or "QUAL" section* (use uppercase to have the PR appears into the ChangeLog, lowercase will not appears)
-- *follow the project [contributing guidelines](/.github/CONTRIBUTING.md)*
-- ***in particular, in case of a bugfix, please check that you are targetting the branch corresponding to the oldest version in which the bug occurs***
-- *replace the bracket enclosed texts with meaningful information*
+# Pull Request - ERP MTIB
 
+**Copyright (C) 2026 EVE-MEDIA - All rights reserved**
 
-# FIX|Fix #[*issue_number Short description*]
-[*Long description*]
+---
 
+## 📋 Type de modification
 
-# CLOSE|Close #[*issue_number Short description*]
-[*Long description*]
+Cocher la case appropriée :
 
+- [ ] 🐛 **Bug fix** (correction de bug)
+- [ ] ✨ **Feature** (nouvelle fonctionnalité)
+- [ ] 🎨 **UI/UX** (amélioration interface)
+- [ ] ⚡ **Performance** (optimisation)
+- [ ] 📝 **Documentation**
+- [ ] 🔧 **Configuration**
+- [ ] ♻️ **Refactoring**
 
-# NEW|New [*Short description*]
-[*Long description*]
+---
 
+## 📝 Description
 
-# UIUX|Uiux [*Short description*]
-[*Long description*]
+### Résumé
+*Décrivez brièvement les changements*
 
+### Motivation
+*Pourquoi cette modification est-elle nécessaire ?*
 
-# PERF|Perf #[*issue_number Short description*]
-[*Long description*]
+### Solution
+*Comment avez-vous résolu le problème ?*
 
+---
 
-# QUAL|Qual #[*issue_number Short description*]
-[*Long description*]
+## 🔗 Issue liée
 
+Closes #[numéro_issue]
+
+---
+
+## ✅ Checklist
+
+- [ ] Le code compile sans erreurs
+- [ ] Les tests passent
+- [ ] La documentation est à jour
+- [ ] Le code suit les standards du projet
+- [ ] Les changements ont été testés localement
+- [ ] Pas de conflit avec la branche `main`
+
+---
+
+## 🧪 Tests effectués
+
+*Décrivez comment vous avez testé vos modifications*
+
+- [ ] Test manuel
+- [ ] Tests unitaires
+- [ ] Tests d'intégration
+
+**Environnement de test** :
+- PHP version :
+- Navigateur :
+- Base de données :
+
+---
+
+## 📸 Screenshots (si applicable)
+
+*Ajoutez des captures d'écran si changements UI*
+
+---
+
+## 📌 Notes additionnelles
+
+*Informations supplémentaires pour les reviewers*
+
+---
+
+## 👥 Reviewers
+
+@HachemBakhouch
+
+---
+
+**Développeur** :
+**Date** :
+**Client** : MTIB

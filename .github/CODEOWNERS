@@ -1,1 +1,23 @@
-htdocs/takepos @andreubisquerra
+# Code Owners for ERP MTIB
+# Copyright (C) 2026 EVE-MEDIA - All rights reserved
+
+# Default owners for everything in the repo
+* @HachemBakhouch
+
+# Custom MTIB modules
+/custom/ @HachemBakhouch
+
+# Configuration files
+/htdocs/conf/ @HachemBakhouch
+
+# Core customizations
+/htdocs/core/tpl/ @HachemBakhouch
+/htdocs/langs/ @HachemBakhouch
+/htdocs/theme/ @HachemBakhouch
+
+# Documentation
+*.md @HachemBakhouch
+
+# Security and license
+/SECURITY.md @HachemBakhouch
+/LICENSE.txt @HachemBakhouch
