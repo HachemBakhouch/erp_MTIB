@@ -1,304 +1,238 @@
 /**
- * Custom CSS Theme for ERP MTIB
+ * Custom CSS Theme for ERP MTIB - Version 2 (Fixed)
  * Copyright (C) 2026 EVE-MEDIA - All rights reserved
  *
  * Charte graphique: Bleu Marine (#002B5B, #1A5490, #2E8BC0)
- * Couleurs secondaires: Blanc (#FFFFFF), Gris clair (#F5F7FA), Orange accent (#FF6B35)
+ * Utilise !important pour surcharger les styles Dolibarr
  */
 
-:root {
-    /* Couleurs principales - Bleu Marine */
-    --mtib-primary-dark: #002B5B;      /* Bleu marine foncé */
-    --mtib-primary: #1A5490;           /* Bleu marine moyen */
-    --mtib-primary-light: #2E8BC0;     /* Bleu clair */
-    --mtib-primary-lighter: #5BA3D0;   /* Bleu très clair */
-
-    /* Couleurs secondaires */
-    --mtib-accent: #FF6B35;            /* Orange accent */
-    --mtib-success: #28A745;           /* Vert succès */
-    --mtib-warning: #FFC107;           /* Jaune warning */
-    --mtib-danger: #DC3545;            /* Rouge danger */
-
-    /* Neutres */
-    --mtib-white: #FFFFFF;
-    --mtib-gray-50: #F5F7FA;
-    --mtib-gray-100: #E4E7EB;
-    --mtib-gray-200: #CBD2D9;
-    --mtib-gray-300: #9AA5B1;
-    --mtib-gray-400: #7B8794;
-    --mtib-gray-500: #616E7C;
-    --mtib-gray-600: #52606D;
-    --mtib-gray-700: #3E4C59;
-    --mtib-gray-800: #323F4B;
-    --mtib-gray-900: #1F2933;
-
-    /* Ombres */
-    --mtib-shadow-sm: 0 1px 3px rgba(0, 43, 91, 0.1);
-    --mtib-shadow-md: 0 4px 6px rgba(0, 43, 91, 0.1);
-    --mtib-shadow-lg: 0 10px 25px rgba(0, 43, 91, 0.15);
-    --mtib-shadow-xl: 0 20px 40px rgba(0, 43, 91, 0.2);
-
-    /* Transitions */
-    --mtib-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 /* ============================================
-   PAGE DE CONNEXION (LOGIN)
+   PAGE DE CONNEXION (LOGIN) - VERSION CORRIGÉE
    ============================================ */
 
-body.bodylogin {
-    background: linear-gradient(135deg, var(--mtib-primary-dark) 0%, var(--mtib-primary) 50%, var(--mtib-primary-light) 100%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+/* Body de la page de login */
+body.bodylogin,
+body#mainbody.bodylogin {
+    background: linear-gradient(135deg, #002B5B 0%, #1A5490 50%, #2E8BC0 100%) !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 20px !important;
 }
 
-/* Effet de fond animé */
-body.bodylogin::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: moveBackground 20s linear infinite;
-    pointer-events: none;
+/* Container de login */
+div.login_center,
+div#login_center {
+    background: #FFFFFF !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 60px rgba(0, 43, 91, 0.3) !important;
+    max-width: 420px !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    border: none !important;
+    margin: 20px auto !important;
 }
 
-@keyframes moveBackground {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 50px); }
-}
-
-/* Container principal de login */
-.login_center {
-    background: var(--mtib-white);
-    border-radius: 20px;
-    box-shadow: var(--mtib-shadow-xl);
-    padding: 0;
-    max-width: 450px;
-    width: 90%;
-    overflow: hidden;
-    animation: slideIn 0.5s ease-out;
-    position: relative;
-    z-index: 1;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* En-tête de la carte de login */
-.login_center > div:first-child {
-    background: linear-gradient(135deg, var(--mtib-primary-dark), var(--mtib-primary));
-    padding: 40px 30px;
-    text-align: center;
-    position: relative;
-}
-
-.login_center > div:first-child::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--mtib-accent), var(--mtib-primary-light));
+/* En-tête avec logo */
+div.login_center > div:first-child,
+div.login_center table:first-child,
+div.login_center > form > div:first-child {
+    background: linear-gradient(135deg, #002B5B, #1A5490) !important;
+    padding: 35px 25px !important;
+    text-align: center !important;
+    border-bottom: 3px solid #FF6B35 !important;
 }
 
 /* Logo */
-.login_center img {
-    max-height: 80px;
-    max-width: 200px;
-    filter: brightness(0) invert(1);
-    margin-bottom: 15px;
+div.login_center img,
+div.login_center .loginlogo img {
+    max-height: 70px !important;
+    max-width: 180px !important;
+    width: auto !important;
+    height: auto !important;
+    filter: brightness(0) invert(1) !important;
+    margin: 0 auto 10px auto !important;
+    display: block !important;
 }
 
-/* Titre */
+/* Titre "ERP MTIB" */
+div.login_table_title,
 .login_table_title {
-    color: var(--mtib-white) !important;
-    font-size: 28px !important;
-    font-weight: 600 !important;
-    margin: 15px 0 5px 0 !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    margin: 12px 0 0 0 !important;
+    padding: 0 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    text-align: center !important;
 }
 
-/* Version */
-.login_table_title + div {
-    color: rgba(255, 255, 255, 0.8) !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
+/* Sous-titre version */
+div.login_table_title + div {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 13px !important;
+    margin-top: 5px !important;
 }
 
-/* Formulaire */
+/* Table de formulaire */
+table.login_table,
 .login_table {
-    padding: 40px 30px !important;
-    background: var(--mtib-white) !important;
+    width: 100% !important;
+    padding: 30px 25px !important;
+    background: #FFFFFF !important;
+    border: none !important;
 }
 
-.login_table tr {
-    display: block;
-    margin-bottom: 20px;
+table.login_table tr {
+    display: block !important;
+    margin-bottom: 18px !important;
 }
 
-.login_table td {
+table.login_table td {
     display: block !important;
     padding: 0 !important;
+    border: none !important;
 }
 
-/* Labels */
-.login_table .fieldrequired,
-.login_table label {
-    color: var(--mtib-gray-700) !important;
-    font-weight: 500 !important;
-    font-size: 14px !important;
-    margin-bottom: 8px !important;
+/* Labels des champs */
+table.login_table td.fieldrequired,
+table.login_table label,
+table.login_table .fieldrequired {
+    color: #3E4C59 !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    margin-bottom: 6px !important;
     display: block !important;
 }
 
-/* Inputs */
-.login_table input[type="text"],
-.login_table input[type="password"],
-.login_table input[type="email"] {
+/* Inputs de formulaire */
+table.login_table input[type="text"],
+table.login_table input[type="password"],
+table.login_table input[type="email"],
+input.flat[type="text"],
+input.flat[type="password"] {
     width: 100% !important;
-    padding: 12px 16px !important;
-    border: 2px solid var(--mtib-gray-200) !important;
-    border-radius: 10px !important;
-    font-size: 15px !important;
-    transition: var(--mtib-transition) !important;
-    background: var(--mtib-gray-50) !important;
-    color: var(--mtib-gray-900) !important;
+    max-width: 100% !important;
+    padding: 12px 14px !important;
+    border: 2px solid #CBD2D9 !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    background: #F5F7FA !important;
+    color: #1F2933 !important;
+    transition: all 0.3s ease !important;
+    box-sizing: border-box !important;
 }
 
-.login_table input[type="text"]:focus,
-.login_table input[type="password"]:focus,
-.login_table input[type="email"]:focus {
+table.login_table input[type="text"]:focus,
+table.login_table input[type="password"]:focus,
+table.login_table input[type="email"]:focus,
+input.flat[type="text"]:focus,
+input.flat[type="password"]:focus {
     outline: none !important;
-    border-color: var(--mtib-primary) !important;
-    background: var(--mtib-white) !important;
-    box-shadow: 0 0 0 3px rgba(26, 84, 144, 0.1) !important;
+    border-color: #1A5490 !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 0 0 3px rgba(26, 84, 144, 0.15) !important;
 }
 
 /* Bouton de connexion */
-.login_table input[type="submit"],
-.login_table .button {
+table.login_table input[type="submit"],
+table.login_table .button,
+input.button[type="submit"] {
     width: 100% !important;
-    padding: 14px 24px !important;
-    background: linear-gradient(135deg, var(--mtib-primary), var(--mtib-primary-light)) !important;
-    color: var(--mtib-white) !important;
+    padding: 14px 20px !important;
+    background: linear-gradient(135deg, #1A5490, #2E8BC0) !important;
+    color: #FFFFFF !important;
     border: none !important;
-    border-radius: 10px !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
+    border-radius: 8px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
     cursor: pointer !important;
-    transition: var(--mtib-transition) !important;
-    box-shadow: var(--mtib-shadow-md) !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-top: 10px !important;
 }
 
-.login_table input[type="submit"]:hover,
-.login_table .button:hover {
+table.login_table input[type="submit"]:hover,
+table.login_table .button:hover,
+input.button[type="submit"]:hover {
+    background: linear-gradient(135deg, #002B5B, #1A5490) !important;
     transform: translateY(-2px) !important;
-    box-shadow: var(--mtib-shadow-lg) !important;
-    background: linear-gradient(135deg, var(--mtib-primary-dark), var(--mtib-primary)) !important;
+    box-shadow: 0 6px 20px rgba(26, 84, 144, 0.4) !important;
 }
 
-.login_table input[type="submit"]:active {
+table.login_table input[type="submit"]:active {
     transform: translateY(0) !important;
 }
 
-/* Lien "Mot de passe oublié" */
-.login_table a {
-    color: var(--mtib-primary) !important;
+/* Liens (mot de passe oublié, etc.) */
+table.login_table a,
+div.login_center a {
+    color: #1A5490 !important;
     text-decoration: none !important;
-    font-size: 14px !important;
+    font-size: 13px !important;
     font-weight: 500 !important;
-    transition: var(--mtib-transition) !important;
-    display: inline-block;
+    transition: color 0.3s ease !important;
 }
 
-.login_table a:hover {
-    color: var(--mtib-primary-dark) !important;
+table.login_table a:hover,
+div.login_center a:hover {
+    color: #002B5B !important;
     text-decoration: underline !important;
 }
 
 /* Messages d'erreur */
+div.error,
 .error {
-    background: linear-gradient(135deg, #FEE, #FDD) !important;
-    border-left: 4px solid var(--mtib-danger) !important;
-    color: var(--mtib-danger) !important;
-    padding: 12px 16px !important;
-    border-radius: 8px !important;
-    margin: 15px 0 !important;
-    font-size: 14px !important;
-    box-shadow: var(--mtib-shadow-sm) !important;
+    background: linear-gradient(135deg, #FFE5E5, #FFD0D0) !important;
+    border: none !important;
+    border-left: 4px solid #DC3545 !important;
+    color: #721c24 !important;
+    padding: 12px 15px !important;
+    border-radius: 6px !important;
+    margin: 10px 0 !important;
+    font-size: 13px !important;
 }
 
 /* Messages de succès */
+div.ok,
 .ok {
-    background: linear-gradient(135deg, #EFE, #DFD) !important;
-    border-left: 4px solid var(--mtib-success) !important;
-    color: var(--mtib-success) !important;
-    padding: 12px 16px !important;
-    border-radius: 8px !important;
-    margin: 15px 0 !important;
-    font-size: 14px !important;
-    box-shadow: var(--mtib-shadow-sm) !important;
+    background: linear-gradient(135deg, #E5F5E5, #D0F0D0) !important;
+    border: none !important;
+    border-left: 4px solid #28A745 !important;
+    color: #155724 !important;
+    padding: 12px 15px !important;
+    border-radius: 6px !important;
+    margin: 10px 0 !important;
+    font-size: 13px !important;
 }
 
 /* Messages d'avertissement */
+div.warning,
 .warning {
     background: linear-gradient(135deg, #FFF8E1, #FFECB3) !important;
-    border-left: 4px solid var(--mtib-warning) !important;
+    border: none !important;
+    border-left: 4px solid #FFC107 !important;
     color: #856404 !important;
-    padding: 12px 16px !important;
-    border-radius: 8px !important;
-    margin: 15px 0 !important;
-    font-size: 14px !important;
-    box-shadow: var(--mtib-shadow-sm) !important;
+    padding: 12px 15px !important;
+    border-radius: 6px !important;
+    margin: 10px 0 !important;
+    font-size: 13px !important;
 }
 
-/* Footer de la page de login */
-.login_center > div:last-child {
-    background: var(--mtib-gray-50);
-    padding: 20px;
-    text-align: center;
-    font-size: 12px;
-    color: var(--mtib-gray-600);
-    border-top: 1px solid var(--mtib-gray-200);
-}
-
-/* ============================================
-   RESPONSIVE - PAGE DE CONNEXION
-   ============================================ */
-
-@media (max-width: 768px) {
-    .login_center {
-        max-width: 95%;
-        margin: 20px;
-    }
-
-    .login_table {
-        padding: 30px 20px !important;
-    }
-
-    .login_table_title {
-        font-size: 24px !important;
-    }
+/* Footer copyright */
+div.login_center > div:last-child,
+#login_center > div:last-child {
+    background: #F5F7FA !important;
+    padding: 15px !important;
+    text-align: center !important;
+    font-size: 11px !important;
+    color: #616E7C !important;
+    border-top: 1px solid #E4E7EB !important;
 }
 
 /* ============================================
@@ -306,245 +240,250 @@ body.bodylogin::before {
    ============================================ */
 
 /* Barre de navigation supérieure */
-#id-top {
-    background: linear-gradient(135deg, var(--mtib-primary-dark), var(--mtib-primary)) !important;
-    box-shadow: var(--mtib-shadow-md) !important;
-    border-bottom: 3px solid var(--mtib-accent) !important;
+div#id-top,
+div.side-nav-vert {
+    background: linear-gradient(135deg, #002B5B, #1A5490) !important;
+    border-bottom: 3px solid #FF6B35 !important;
+    box-shadow: 0 2px 8px rgba(0, 43, 91, 0.2) !important;
+}
+
+/* Liens du menu supérieur */
+div#id-top a,
+div.tmenu a {
+    color: #FFFFFF !important;
+    transition: all 0.3s ease !important;
+}
+
+div#id-top a:hover,
+div.tmenu a:hover {
+    color: #FF6B35 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Menu de gauche */
-#id-left {
-    background: var(--mtib-gray-50) !important;
-    border-right: 1px solid var(--mtib-gray-200) !important;
+div#id-left,
+div.side-nav {
+    background: #F5F7FA !important;
+    border-right: 1px solid #E4E7EB !important;
+}
+
+/* Titres de menu */
+div.menu_titre,
+.menu_titre {
+    background: transparent !important;
+    color: #002B5B !important;
+    font-weight: 700 !important;
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border-bottom: 2px solid #1A5490 !important;
+    margin-bottom: 5px !important;
 }
 
 /* Éléments de menu */
-.vmenu,
-.menu_titre {
-    background: transparent !important;
-    border: none !important;
-}
-
-.menu_titre {
-    color: var(--mtib-primary-dark) !important;
-    font-weight: 600 !important;
-    padding: 12px 16px !important;
-    font-size: 14px !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.vmenusearchselectcombo {
-    background: var(--mtib-white) !important;
-    border: 1px solid var(--mtib-gray-300) !important;
-    border-radius: 8px !important;
-    padding: 8px 12px !important;
-    transition: var(--mtib-transition) !important;
-}
-
-.vmenusearchselectcombo:hover {
-    background: var(--mtib-gray-50) !important;
-    border-color: var(--mtib-primary) !important;
-}
-
-/* Liens de menu actifs */
-a.vsmenu:hover,
-a.vmenu:hover {
-    background: var(--mtib-primary-light) !important;
-    color: var(--mtib-white) !important;
+a.vmenu,
+a.vsmenu,
+div.vmenu {
+    color: #3E4C59 !important;
+    padding: 8px 14px !important;
+    transition: all 0.3s ease !important;
     border-radius: 6px !important;
+    margin: 2px 8px !important;
 }
 
-/* Boutons principaux */
-.button,
+a.vmenu:hover,
+a.vsmenu:hover {
+    background: linear-gradient(135deg, #2E8BC0, #5BA3D0) !important;
+    color: #FFFFFF !important;
+    transform: translateX(4px) !important;
+}
+
+/* Boutons d'action */
+a.butAction,
 .butAction,
-input[type="submit"].button {
-    background: linear-gradient(135deg, var(--mtib-primary), var(--mtib-primary-light)) !important;
-    color: var(--mtib-white) !important;
+input.button,
+.button {
+    background: linear-gradient(135deg, #1A5490, #2E8BC0) !important;
+    color: #FFFFFF !important;
     border: none !important;
-    border-radius: 8px !important;
-    padding: 10px 20px !important;
-    font-weight: 500 !important;
-    transition: var(--mtib-transition) !important;
-    box-shadow: var(--mtib-shadow-sm) !important;
+    border-radius: 6px !important;
+    padding: 9px 18px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 6px rgba(26, 84, 144, 0.2) !important;
     cursor: pointer !important;
+    text-decoration: none !important;
 }
 
-.button:hover,
+a.butAction:hover,
 .butAction:hover,
-input[type="submit"].button:hover {
-    background: linear-gradient(135deg, var(--mtib-primary-dark), var(--mtib-primary)) !important;
+input.button:hover,
+.button:hover {
+    background: linear-gradient(135deg, #002B5B, #1A5490) !important;
     transform: translateY(-1px) !important;
-    box-shadow: var(--mtib-shadow-md) !important;
+    box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3) !important;
 }
 
-/* Boutons secondaires */
+/* Boutons de suppression */
+a.butActionDelete,
 .butActionDelete {
-    background: linear-gradient(135deg, var(--mtib-danger), #E02040) !important;
-    color: var(--mtib-white) !important;
+    background: linear-gradient(135deg, #DC3545, #C82333) !important;
+    color: #FFFFFF !important;
 }
 
+a.butActionDelete:hover,
 .butActionDelete:hover {
-    background: linear-gradient(135deg, #C01030, var(--mtib-danger)) !important;
-}
-
-/* Cartes et panneaux */
-.div-table-responsive-no-min,
-.fichecenter,
-.fiche {
-    background: var(--mtib-white) !important;
-    border-radius: 12px !important;
-    box-shadow: var(--mtib-shadow-sm) !important;
-    padding: 20px !important;
-    margin-bottom: 20px !important;
+    background: linear-gradient(135deg, #BD2130, #DC3545) !important;
 }
 
 /* Tableaux */
-.liste,
-.noborder {
+table.liste,
+table.noborder,
+table.border {
     border-radius: 8px !important;
     overflow: hidden !important;
-    box-shadow: var(--mtib-shadow-sm) !important;
+    box-shadow: 0 1px 4px rgba(0, 43, 91, 0.1) !important;
 }
 
-.liste tr.liste_titre,
-.noborder tr.liste_titre {
-    background: linear-gradient(135deg, var(--mtib-primary-dark), var(--mtib-primary)) !important;
-    color: var(--mtib-white) !important;
-    font-weight: 600 !important;
+table.liste tr.liste_titre,
+table.noborder tr.liste_titre,
+tr.liste_titre {
+    background: linear-gradient(135deg, #002B5B, #1A5490) !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
 }
 
-.liste tr:hover,
-.noborder tr:hover {
-    background: var(--mtib-gray-50) !important;
+table.liste tr.liste_titre th,
+table.noborder tr.liste_titre th {
+    color: #FFFFFF !important;
+    border-bottom: 2px solid #FF6B35 !important;
 }
 
-/* Badges et étiquettes */
-.badge {
-    border-radius: 12px !important;
-    padding: 4px 12px !important;
-    font-size: 12px !important;
-    font-weight: 600 !important;
+table.liste tr:hover,
+table.noborder tr:hover {
+    background: #F5F7FA !important;
 }
 
-.badge-status4 {
-    background: var(--mtib-success) !important;
-    color: var(--mtib-white) !important;
+/* Fiches et cartes */
+div.fichecenter,
+div.fiche,
+div.tabBar {
+    background: #FFFFFF !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 8px rgba(0, 43, 91, 0.08) !important;
+    padding: 18px !important;
+    margin-bottom: 18px !important;
 }
 
-.badge-status1 {
-    background: var(--mtib-warning) !important;
-    color: var(--mtib-gray-900) !important;
+/* Onglets */
+div.tabBar a,
+.tabBar a {
+    color: #3E4C59 !important;
+    border-radius: 6px 6px 0 0 !important;
+    padding: 10px 18px !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
 }
 
-.badge-status0 {
-    background: var(--mtib-gray-400) !important;
-    color: var(--mtib-white) !important;
+div.tabBar a:hover,
+.tabBar a:hover {
+    background: #F5F7FA !important;
+    color: #1A5490 !important;
 }
 
-/* Inputs et formulaires */
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-textarea,
-select {
-    border: 1px solid var(--mtib-gray-300) !important;
-    border-radius: 6px !important;
-    padding: 8px 12px !important;
-    transition: var(--mtib-transition) !important;
+div.tabBar a.tabactive,
+.tabBar a.tabactive {
+    background: #1A5490 !important;
+    color: #FFFFFF !important;
+    border-bottom: 3px solid #FF6B35 !important;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus,
-textarea:focus,
-select:focus {
-    border-color: var(--mtib-primary) !important;
+/* Champs de formulaire */
+input.flat,
+textarea.flat,
+select.flat {
+    border: 1px solid #CBD2D9 !important;
+    border-radius: 5px !important;
+    padding: 7px 11px !important;
+    transition: all 0.3s ease !important;
+    background: #FFFFFF !important;
+}
+
+input.flat:focus,
+textarea.flat:focus,
+select.flat:focus {
+    border-color: #1A5490 !important;
     outline: none !important;
     box-shadow: 0 0 0 3px rgba(26, 84, 144, 0.1) !important;
 }
 
-/* Tabs */
-.tabBar {
-    background: var(--mtib-white) !important;
-    border-bottom: 2px solid var(--mtib-gray-200) !important;
+/* Badges de statut */
+span.badge,
+.badge {
+    border-radius: 10px !important;
+    padding: 4px 10px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
 }
 
-.tabBar a {
-    color: var(--mtib-gray-700) !important;
-    border-radius: 8px 8px 0 0 !important;
-    padding: 10px 20px !important;
-    transition: var(--mtib-transition) !important;
+span.badge-status4,
+.badge-status4 {
+    background: #28A745 !important;
+    color: #FFFFFF !important;
 }
 
-.tabBar a:hover {
-    background: var(--mtib-gray-50) !important;
-    color: var(--mtib-primary) !important;
-}
-
-.tabBar a.tabactive {
-    background: var(--mtib-primary) !important;
-    color: var(--mtib-white) !important;
-    border-bottom: 3px solid var(--mtib-accent) !important;
+span.badge-status1,
+.badge-status1 {
+    background: #FFC107 !important;
+    color: #1F2933 !important;
 }
 
 /* Pagination */
+div.pagination,
 .pagination {
-    background: var(--mtib-white) !important;
-    border-radius: 8px !important;
-    padding: 10px !important;
-    box-shadow: var(--mtib-shadow-sm) !important;
-}
-
-.pagination a {
-    color: var(--mtib-primary) !important;
+    background: #FFFFFF !important;
     border-radius: 6px !important;
-    padding: 6px 12px !important;
-    transition: var(--mtib-transition) !important;
+    padding: 8px !important;
+    box-shadow: 0 1px 4px rgba(0, 43, 91, 0.08) !important;
 }
 
+div.pagination a,
+.pagination a {
+    color: #1A5490 !important;
+    border-radius: 4px !important;
+    padding: 5px 10px !important;
+    transition: all 0.3s ease !important;
+}
+
+div.pagination a:hover,
 .pagination a:hover {
-    background: var(--mtib-primary) !important;
-    color: var(--mtib-white) !important;
+    background: #1A5490 !important;
+    color: #FFFFFF !important;
 }
 
-/* Notifications et alertes */
-#dialogforpopup {
-    border-radius: 12px !important;
-    box-shadow: var(--mtib-shadow-xl) !important;
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    div.login_center,
+    div#login_center {
+        max-width: 95% !important;
+        margin: 10px !important;
+    }
+
+    table.login_table {
+        padding: 25px 18px !important;
+    }
+
+    div.login_table_title,
+    .login_table_title {
+        font-size: 22px !important;
+    }
 }
 
-/* Scrollbar personnalisée */
-::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--mtib-gray-100);
-    border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--mtib-primary);
-    border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--mtib-primary-dark);
-}
-
-/* Footer EVE-MEDIA */
-#footer {
-    background: var(--mtib-gray-900) !important;
-    color: var(--mtib-gray-400) !important;
-    padding: 20px !important;
-    text-align: center !important;
-    border-top: 3px solid var(--mtib-accent) !important;
-}
-
-#footer a {
-    color: var(--mtib-primary-light) !important;
+/* Forcer l'application du thème */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
 }
